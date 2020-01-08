@@ -80,7 +80,7 @@ class Nav extends Component {
         return (
             <>
             <nav className='navbar navbar-light bg-light'>
-                <a className='navbar-brand' href='\'>CODE IMMERSIVES</a>
+                <a className='navbar-brand' href='\'>Welcome Home Bitch</a>
                 { this.state.isAuth ? (
                     <>
                         <span>

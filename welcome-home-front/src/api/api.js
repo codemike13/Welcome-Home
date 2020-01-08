@@ -25,6 +25,23 @@ export const apiAuth = () => {
     })
 }
 
+export const apiHandleSignUpAndLogIn = (userInfo) => {
+    return new Promise((resolve, reject) => {
+        Axios.post('/users/signupandlogin', userInfo, axiosConfig)
+            .then(result => {
+                const { token } = result.data
+
+                localStorage.setItem('jwtToken', token)
+
+                const decoded = jwt_decode(token)
+
+                setAuthJWT(token)
+
+                resolve(decoded)
+            })
+            .catch(error => reject(error.response.data.message))
+    })
+}
 const axiosConfig = {
     headers: {
         'Content-Type': 'application/json;charset=UTF-8',
