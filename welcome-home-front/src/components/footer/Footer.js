@@ -4,26 +4,27 @@ import logo from '../../images/logo.png'
 const Footer = () => {
     return (
         <>
-        <div id="main" style={styles.main}>
-            <div id="main-left" style={styles.mainLeft}>
-                <img src={logo} style={styles.logo} alt="Welcome Home logo"></img>(Copyright Information)
+            <div id="main" style={styles.main}>
+                <div id="main-left" style={styles.mainLeft}>
+                    <img src={logo} style={styles.logo} alt="Welcome Home logo"></img>(Copyright Information)
             </div>
 
-            <div id="main-center" style={styles.mainCenter}>
-                <a href="mailto:mike.stephens@codeimmersives.com,chris.brindle@codeimmersives.com?cc=micp1084@aol.com&subject=Welcome Home Contact">Contact</a>&nbsp;site administrators
+                <div id="main-center" style={styles.mainCenter}>
+                    (Contact Information)
             </div>
 
-            <div id="main-right" style={styles.mainRight}>
-                (Other Links)
+                <div id="main-right" style={styles.mainRight}>
+                    (Other Links)
             </div>
 
-        </div>
+            </div>
         </>
     )
 }
 
 const styles = {
     main: {
+        alignSelf: "flex-end",
         width: '100vw',
         height: '10vh',
         backgroundColor: 'lightGray',
