@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { apiAuth, apiHandleSignUpAndLogIn } from '../../api/api'
 import setAuthJWT from '../../api/setAuthJWT'
+import skyviewLogo from '../../images/skyview-logo.png'
 
 class Nav extends Component {
     constructor(props) {
@@ -79,8 +80,8 @@ class Nav extends Component {
     render() {
         return (
             <>
-            <nav className='navbar navbar-light bg-light'>
-                <a className='navbar-brand' href='\'>Welcome Home Bitch</a>
+            <nav className='navbar navbar-light bg-light' style={styles.navFont}>
+                <img src={skyviewLogo} alt="Skyview Properties Logo" style={styles.skyviewLogo}></img>
                 { this.state.isAuth ? (
                     <>
                         <span>
@@ -128,5 +129,26 @@ class Nav extends Component {
         
     }
 }
+
+const styles = {
+    navFont: {
+        fontFamily: 'Oleo Script, cursive',
+        background: 'linear-gradient(to right, skyBlue, white)',
+        height: '10vh'
+    },
+    titleSize: {
+        fontSize: '1.5em'
+    },
+    logo: {
+        position: 'fixed',
+        height: '20%',
+        left: '40%'
+    },
+    skyviewLogo: {
+        height: '100%'
+    }
+}
+
+
 export default Nav
 
