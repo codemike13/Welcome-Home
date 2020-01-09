@@ -25,6 +25,8 @@ const Footer = () => {
 const styles = {
     main: {
         alignSelf: "flex-end",
+        position: 'fixed',
+        bottom: '0',
         width: '100vw',
         height: '10vh',
         backgroundColor: 'lightGray',
