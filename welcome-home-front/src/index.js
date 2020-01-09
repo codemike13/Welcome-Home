@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Nav from './components/Nav/Nav'
+import Panel from './components/Panels/Panels'
 
 class App extends Component {
     state = {
@@ -10,7 +11,10 @@ class App extends Component {
 
     render() {
         return (
-            <Nav />
+            <>
+                <Nav />
+                <Panel />
+            </>
         )
     }
 
