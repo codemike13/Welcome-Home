@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Nav from './components/Nav/Nav'
 import Panel from './components/Panels/Panels'
+import Footer from './components/footer/Footer'
 
 class App extends Component {
     state = {
@@ -14,6 +15,7 @@ class App extends Component {
             <>
                 <Nav />
                 <Panel />
+                <Footer />
             </>
         )
     }
