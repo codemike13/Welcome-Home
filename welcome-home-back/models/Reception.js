@@ -7,7 +7,8 @@ const ReceptionSchema = new Schema({
     firstName: { type: String, default: '' },
     lastName: { type: String, default: '' },
     email: { type: String, default: '', unique: true },
-    contactNumber: { type: Number, default: '' }
+    contactNumber: { type: Number, default: '' },
+    reception: { type: Boolean, default: true }
 })
 
 module.exports = mongoose.model('reception', ReceptionSchema)

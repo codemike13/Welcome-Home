@@ -30,7 +30,8 @@ const ResidentSchema = new Schema({
         policyNumber: { type: String, default: '' },
         liabilityCoverage: { type: Number, default: '' },
         propertyCoverage: { type: Number, default: '' }
-    }
+    },
+    resident: { type: Boolean, default: true }
 })
 
 module.exports = mongoose.model('resident', ResidentSchema)
