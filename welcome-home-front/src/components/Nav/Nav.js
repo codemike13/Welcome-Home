@@ -112,7 +112,7 @@ class Nav extends Component {
                             name='password'
                             onChange={ this.handleInputOnChange }
                         />
-                        <button className='btn btn-outline-success my-2 my-sn-0'>Sign Up | Sign In</button>
+                        <button className='btn btn-outline-success my-2 my-sn-0'>Sign In</button>
                     </form>
                 ) }
             </nav>
