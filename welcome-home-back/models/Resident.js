@@ -12,7 +12,7 @@ const ResidentSchema = new Schema({
     cellNumber: { type: Number, default: '' },
     workNumber: { type: Number, default: '' },
     faxNumber: { type: Number, default: '' },
-    textMessage: { type: Boolean, default: false },
+    textMessageAuth: { type: Boolean, default: false },
     emergencyContact: { type: String, default: '' },
     notifyMaintenance: { type: Boolean, default: true },
     notifyEvent: { type: Boolean, default: true },
