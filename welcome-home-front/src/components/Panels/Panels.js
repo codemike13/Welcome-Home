@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import Drawer from 'react-drag-drawer'
-
+import Transition from 'react-addons-css-transition-group';
 
 class Panel extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            isAuth: false
+            isAuth: false,
+            openBox: false
         }
     }
 
@@ -18,14 +19,19 @@ class Panel extends Component {
         })
     }
 
-    toggle = (type, value) => event => {
-        this.setState(state => {
-            return {
-                [type]: value
-            };
-        });
-    };
+    // toggle = (type, value) => event => {
+    //     this.setState(state => {
+    //         return {
+    //             [type]: value
+    //         };
+    //     });
+    // };
 
+    toggle = () => {
+        this.setState(prevState => ({
+            openBox: !prevState.openBox
+        }));
+    }
 
 
     render() {
@@ -34,9 +40,17 @@ class Panel extends Component {
         } = this.state;
         return (
             <>
-                <div style={styles.panel}> here I Am </div>
+                {/* <Transition> */}
+                <div style={openBox ? styles.panelDown : styles.panelUp}>
+                    <div style={styles.panelButton}
+                        onClick={this.toggle}
+                        open={openBox}
+                    >
+                        here >> </div>
+                </div>
+                {/* </Transition> */}
 
-                <div onClick={this.toggle("openBox", true)}> Click </div>
+                {/* <div onClick={this.toggle("openBox", true)}> Click </div>
                 <Drawer
                     style={styles.panel}
                     containerOpacity={0.9}
@@ -50,7 +64,7 @@ class Panel extends Component {
                             Close drawer
             </button>
                     </div>
-                </Drawer>
+                </Drawer> */}
             </>
         )
     }
@@ -60,10 +74,34 @@ class Panel extends Component {
 export default Panel
 
 const styles = {
-    panel: {
+    panelUp: {
+        display: "flex",
+        // marginBottom: "auto",
         backgroundColor: "rgba(0,25,0,0.2)",
         border: '1px solid black',
-        width: "20vw",
-        height: "90vh"
-    }
+        width: "100vw",
+        height: "5vh",
+        opacity: "1",
+        transition: "height 500ms ease-in"
+
+    },
+    panelDown: {
+        display: "flex",
+        // marginBottom: "auto",
+        backgroundColor: "rgba(0,25,0,0.2)",
+        border: '1px solid black',
+        width: "100vw",
+        height: "20vh",
+        opacity: ".8",
+        transition: "height .3s ease-in"
+    },
+    panelButton: {
+        textAlign: "center",
+        alignSelf: "flex-end",
+        backgroundColor: "red",
+        width: "100%",
+        height: "5vh",
+        zIndex: "10"
+    },
+
 }

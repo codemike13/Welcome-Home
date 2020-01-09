@@ -12,16 +12,23 @@ class App extends Component {
 
     render() {
         return (
-            <>
+            <div style={styles.app}>
                 <Nav />
                 <Panel />
                 <Footer />
-            </>
+            </div>
         )
     }
 
 
 }
 
+const styles = {
+    app: {
+        display: "flex",
+        flexDirection: "column",
+        height: '100vh',
+        border: "5px solid black"
+    }
+}
 ReactDOM.render(<App />, document.getElementById('root'));
-
