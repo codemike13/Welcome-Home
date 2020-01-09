@@ -29,7 +29,7 @@ const styles = {
         bottom: '0',
         width: '100vw',
         height: '10vh',
-        backgroundColor: 'lightGray',
+        background: 'linear-gradient(to right, skyBlue, white)',
         display: 'grid',
         gridTemplateColumns: '1fr 1fr 1fr',
         gridTemplateRows: '100%'
