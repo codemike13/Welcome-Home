@@ -10,7 +10,7 @@ const Footer = () => {
             </div>
 
             <div id="main-center" style={styles.mainCenter}>
-                (Contact Information)
+                <a href="mailto:mike.stephens@codeimmersives.com,chris.brindle@codeimmersives.com?cc=micp1084@aol.com&subject=Welcome Home Contact">Contact</a>&nbsp;site administrators
             </div>
 
             <div id="main-right" style={styles.mainRight}>
@@ -42,7 +42,6 @@ const styles = {
     },
     mainCenter: {
         display: 'flex',
-        flexDirection: 'column',
         gridArea: '1 / 2 / span 1 / span 1',
         justifyContent: 'center',
         alignItems: 'center'
