@@ -1,6 +1,6 @@
 const Jwtstrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
-const User = require('../routes/users/models/User')
+const User = require('../models/Resident')
 
 const key = process.env.SECRET_KEY || 'defaultSecretKey'
 

@@ -13,7 +13,7 @@ let MongoStore = require('connect-mongo')(session)
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const receptionRouter = require('./routes/reception')
-const superUserRouter = require('./router/super-user')
+const superUserRouter = require('./routes/super-user')
 
 require('dotenv').config()
 
