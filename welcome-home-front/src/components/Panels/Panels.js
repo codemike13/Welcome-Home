@@ -42,6 +42,13 @@ class Panel extends Component {
             <>
                 {/* <Transition> */}
                 <div style={openBox ? styles.panelDown : styles.panelUp}>
+                    <section style={openBox ? styles.panelShow : styles.panelHide}>
+                        <div style={styles.panelBox}> Admin</div>
+                        <div style={styles.panelBox}> Maintenance</div>
+                        <div style={styles.panelBox}> Mail</div>
+                        <div style={styles.panelBox}>Calendar</div>
+
+                    </section>
                     <div style={styles.panelButton}
                         onClick={this.toggle}
                         open={openBox}
@@ -76,32 +83,45 @@ export default Panel
 const styles = {
     panelUp: {
         display: "flex",
-        // marginBottom: "auto",
+        flexDirection: "column",
         backgroundColor: "rgba(0,25,0,0.2)",
         border: '1px solid black',
         width: "100vw",
         height: "5vh",
-        opacity: "1",
-        transition: "height 500ms ease-in"
 
     },
     panelDown: {
         display: "flex",
-        // marginBottom: "auto",
+        flexDirection: "column",
         backgroundColor: "rgba(0,25,0,0.2)",
         border: '1px solid black',
         width: "100vw",
         height: "20vh",
-        opacity: ".8",
-        transition: "height .3s ease-in"
+        transition: "height .1s "
     },
     panelButton: {
         textAlign: "center",
-        alignSelf: "flex-end",
         backgroundColor: "red",
         width: "100%",
         height: "5vh",
-        zIndex: "10"
     },
+    panelBox: {
+        width: "25%",
+        height: "15vh",
+        border: "1px solid black"
+    },
+    panelShow: {
+        display: "flex",
+        flexDirection: "row",
+        border: '1px solid black',
+        transition: "display .3s ease-out"
+
+    },
+    panelHide: {
+        display: "none",
+        flexDirection: "row",
+        border: '1px solid black',
+        transition: "display .3s ease-in"
+    }
 
 }

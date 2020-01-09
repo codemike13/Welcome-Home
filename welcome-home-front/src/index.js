@@ -28,7 +28,7 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         height: '100vh',
-        border: "5px solid black"
+        // border: "5px solid black"
     }
 }
 ReactDOM.render(<App />, document.getElementById('root'));
