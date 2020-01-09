@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Drawer from 'react-drag-drawer'
 import Transition from 'react-addons-css-transition-group';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTools, faMailBulk, faCalendarAlt, faUserCog, faCommentDollar } from '@fortawesome/free-solid-svg-icons'
 
 class Panel extends Component {
     constructor(props) {
@@ -43,10 +45,33 @@ class Panel extends Component {
                 {/* <Transition> */}
                 <div style={openBox ? styles.panelDown : styles.panelUp}>
                     <section style={openBox ? styles.panelShow : styles.panelHide}>
-                        <div style={styles.panelBox}> Admin</div>
-                        <div style={styles.panelBox}> Maintenance</div>
-                        <div style={styles.panelBox}> Mail</div>
-                        <div style={styles.panelBox}>Calendar</div>
+                        <div style={styles.panelBox}>
+                            <FontAwesomeIcon
+                                style={styles.panelIcon}
+                                icon={faUserCog}
+                            />
+                        </div>
+                        <div style={styles.panelBox}><FontAwesomeIcon
+                            style={styles.panelIcon}
+                            icon={faTools} />
+                        </div>
+                        <div style={styles.panelBox}>
+                            <FontAwesomeIcon
+                                style={styles.panelIcon}
+                                icon={faMailBulk}
+                            />
+                        </div>
+                        <div style={styles.panelBox}>
+                            <FontAwesomeIcon
+                                style={styles.panelIcon}
+                                icon={faCalendarAlt}
+                            />
+                        </div>
+                        <div style={styles.panelBox}>
+                            <FontAwesomeIcon
+                                style={styles.panelIcon}
+                                icon={faCommentDollar}
+                            /></div>
 
                     </section>
                     <div style={styles.panelButton}
@@ -106,9 +131,14 @@ const styles = {
         height: "5vh",
     },
     panelBox: {
+        textAlign: "center",
         width: "25%",
         height: "15vh",
-        border: "1px solid black"
+        // border: "1px solid black"
+    },
+    panelIcon: {
+        width: "25%",
+        height: "15vh",
     },
     panelShow: {
         display: "flex",
