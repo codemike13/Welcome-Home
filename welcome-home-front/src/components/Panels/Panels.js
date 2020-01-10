@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Drawer from 'react-drag-drawer'
 import Transition from 'react-addons-css-transition-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTools, faMailBulk, faCalendarAlt, faUserCog, faCommentDollar } from '@fortawesome/free-solid-svg-icons'
+import { faTools, faMailBulk, faCalendarAlt, faUserCog, faCommentDollar, faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
 
 class Panel extends Component {
     constructor(props) {
@@ -78,7 +78,12 @@ class Panel extends Component {
                         onClick={this.toggle}
                         open={openBox}
                     >
-                        here >> </div>
+
+                        <FontAwesomeIcon
+                            style={openBox ? styles.chevronDown : styles.chevronUp}
+                            icon={faChevronCircleDown}
+                        />
+                    </div>
                 </div>
                 {/* </Transition> */}
 
@@ -110,25 +115,30 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         backgroundColor: "rgba(0,25,0,0.2)",
-        border: '1px solid black',
+        // border: '1px solid black',
         width: "100vw",
-        height: "5vh",
+        height: "7vh",
+        transition: " .1s "
 
     },
     panelDown: {
         display: "flex",
         flexDirection: "column",
         backgroundColor: "rgba(0,25,0,0.2)",
-        border: '1px solid black',
+        // border: '1px solid black',
         width: "100vw",
         height: "20vh",
-        transition: "height .1s "
+        // transition: " .1s "
     },
     panelButton: {
-        textAlign: "center",
-        backgroundColor: "red",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         width: "100%",
-        height: "5vh",
+        height: "7vh",
+        // border: "1px solid black",
+        alignSelf: "flex-end"
+
     },
     panelBox: {
         textAlign: "center",
@@ -140,17 +150,30 @@ const styles = {
         width: "25%",
         height: "15vh",
     },
+    chevronDown: {
+        width: "10%",
+        height: "5vh",
+        transition: "display .3s ease-out"
+
+    },
+    chevronUp: {
+        width: "10%",
+        height: "5vh",
+        transform: "rotatez(180deg)",
+        transition: "display .3s ease-out"
+
+    },
     panelShow: {
         display: "flex",
         flexDirection: "row",
-        border: '1px solid black',
+        // border: '1px solid black',
         transition: "display .3s ease-out"
 
     },
     panelHide: {
         display: "none",
         flexDirection: "row",
-        border: '1px solid black',
+        // border: '1px solid black',
         transition: "display .3s ease-in"
     }
 

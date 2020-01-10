@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Nav from './components/Nav/Nav'
 import Panel from './components/Panels/Panels'
+import Card from './components/Card/Card'
 import Footer from './components/footer/Footer'
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
             <div style={styles.app}>
                 <Nav />
                 <Panel />
+                {/* <Card /> */}
                 <Footer />
             </div>
         )
@@ -26,6 +28,8 @@ class App extends Component {
 const styles = {
     app: {
         display: "flex",
+        // justifyContent: "center",
+        // alignItems: "center",
         flexDirection: "column",
         height: '100vh',
         // border: "5px solid black"
