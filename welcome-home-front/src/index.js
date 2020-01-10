@@ -4,6 +4,7 @@ import './index.css';
 import Nav from './components/Nav/Nav'
 import Panel from './components/Panels/Panels'
 import Card from './components/Card/Card'
+import Calendar from './components/Calendar/Calendar'
 import Footer from './components/footer/Footer'
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
             <div style={styles.app}>
                 <Nav />
                 <Panel />
+                <Calendar />
                 {/* <Card /> */}
                 <Footer />
             </div>
