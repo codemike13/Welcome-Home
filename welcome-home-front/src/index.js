@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Nav from './components/Nav/Nav'
 import Panel from './components/Panels/Panels'
+import Manage from "./components/Manage/manage"
 import Card from './components/Card/Card'
 import Calendar from './components/Calendar/Calendar'
 import Footer from './components/footer/Footer'
@@ -18,7 +19,7 @@ class App extends Component {
     Clicked = val => {
         switch (val) {
             case 1:
-                this.currentPane = <h1>Admin / Users</h1>;
+                this.currentPane = <Manage />;
                 break;
             case 2:
                 this.currentPane = <h1>Maintenance </h1>;
