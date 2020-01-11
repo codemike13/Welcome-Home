@@ -9,7 +9,7 @@ class Manage extends Component {
         super(props)
         this.state = {
             user: 'reception',
-            newUser: false,
+            newUser: true,
             updateUser: false,
             deleteUser: false
         }
@@ -69,7 +69,9 @@ class Manage extends Component {
                     {/* Right side of page */}
                     <div id="reception-content" style={styles.reception.content}>
                         {this.state.newUser ? 
-                        <NewResident />
+                        <NewResident
+                            cancelCreate = {this.showNewResident}
+                        />
                         :
                         ''
                         }
