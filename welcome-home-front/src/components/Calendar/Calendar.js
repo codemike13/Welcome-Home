@@ -68,7 +68,7 @@ class Calendar extends Component {
         for (let d = 1; d <= this.daysInMonth(); d++) {
             daysInMonth.push(
                 <td key={d} style={this.currentDay() ? styles.currentDay : styles.weekDay}>
-                    <span>{d}</span>
+                    <span style={{ marginRight: "50px" }}>{d}</span>
                 </td>
             )
         }
@@ -104,7 +104,7 @@ class Calendar extends Component {
             <div style={styles.container}>
                 <table style={styles.calendar}>
                     <thead>
-                        <tr >
+                        <tr>
 
                         </tr>
                     </thead>
@@ -124,21 +124,26 @@ export default Calendar
 
 const styles = {
     container: {
-        padding: "0",
-        margin: "0",
         textAlign: "center",
         width: "100vw",
         height: "60vh",
-        border: "1px solid black"
+        // border: "1px solid black"
+
     },
     weekDay: {
         textAlign: "center",
-        height: "40px"
+        height: "40px",
+        // border: "1px solid black",
+        marginRight: "50px"
     },
     calendar: {
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "yellow",
+        alignItems: 'center',
+        flexDirection: "row",
+        // border: "1px solid black",
+
+        // backgroundColor: "yellow",
         borderSpacing: "0",
         width: "100%",
         height: "60vh"
@@ -148,8 +153,9 @@ const styles = {
         backgroundColor: "lightBlue",
         width: "13vw",
         height: "10vh",
-        lineHeight: "50px",
-        border: "1px solid black"
+        // border: "1px solid black",
+        borderRadius: "15px",
+
     }
 
 

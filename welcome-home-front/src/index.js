@@ -10,7 +10,10 @@ import Footer from './components/footer/Footer'
 class App extends Component {
     state = {
         isAuth: false,
+        pane: 0,
+        currentPane: null,
     };
+
 
     render() {
         return (

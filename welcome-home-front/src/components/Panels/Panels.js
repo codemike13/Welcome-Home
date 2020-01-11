@@ -45,33 +45,33 @@ class Panel extends Component {
                 {/* <Transition> */}
                 <div style={openBox ? styles.panelDown : styles.panelUp}>
                     <section style={openBox ? styles.panelShow : styles.panelHide}>
-                        <div style={styles.panelBox}>
+                        <button style={styles.panelBox}>
                             <FontAwesomeIcon
                                 style={styles.panelIcon}
                                 icon={faUserCog}
                             />
-                        </div>
-                        <div style={styles.panelBox}><FontAwesomeIcon
+                        </button>
+                        <button style={styles.panelBox}><FontAwesomeIcon
                             style={styles.panelIcon}
                             icon={faTools} />
-                        </div>
-                        <div style={styles.panelBox}>
+                        </button>
+                        <button style={styles.panelBox}>
                             <FontAwesomeIcon
                                 style={styles.panelIcon}
                                 icon={faMailBulk}
                             />
-                        </div>
-                        <div style={styles.panelBox}>
+                        </button>
+                        <button style={styles.panelBox}>
                             <FontAwesomeIcon
                                 style={styles.panelIcon}
                                 icon={faCalendarAlt}
                             />
-                        </div>
-                        <div style={styles.panelBox}>
+                        </button>
+                        <button style={styles.panelBox}>
                             <FontAwesomeIcon
                                 style={styles.panelIcon}
                                 icon={faCommentDollar}
-                            /></div>
+                            /></button>
 
                     </section>
                     <div style={styles.panelButton}
@@ -144,6 +144,8 @@ const styles = {
         textAlign: "center",
         width: "25%",
         height: "15vh",
+        border: "none",
+        outline: "none"
         // border: "1px solid black"
     },
     panelIcon: {
