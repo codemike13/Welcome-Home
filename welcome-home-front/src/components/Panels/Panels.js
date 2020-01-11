@@ -3,6 +3,7 @@ import Drawer from 'react-drag-drawer'
 import Transition from 'react-addons-css-transition-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTools, faMailBulk, faCalendarAlt, faUserCog, faCommentDollar, faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
+import { cx, css } from 'emotion'
 
 class Panel extends Component {
     constructor(props) {
@@ -45,29 +46,60 @@ class Panel extends Component {
                 {/* <Transition> */}
                 <div style={openBox ? styles.panelDown : styles.panelUp}>
                     <section style={openBox ? styles.panelShow : styles.panelHide}>
-                        <button style={styles.panelBox}>
+                        <button
+                            className={cx(panelBx)}
+                            style={{ outline: "none" }}
+                            onClick={() => {
+                                this.props.Clicked(1)
+                            }}
+                        >
                             <FontAwesomeIcon
                                 style={styles.panelIcon}
                                 icon={faUserCog}
                             />
                         </button>
-                        <button style={styles.panelBox}><FontAwesomeIcon
-                            style={styles.panelIcon}
-                            icon={faTools} />
+                        <button
+                            className={cx(panelBx)}
+                            style={{ outline: "none" }}
+                            onClick={() => {
+                                this.props.Clicked(2)
+                            }}
+                        >
+                            <FontAwesomeIcon
+                                style={styles.panelIcon}
+                                icon={faTools} />
                         </button>
-                        <button style={styles.panelBox}>
+                        <button
+                            className={cx(panelBx)}
+                            style={{ outline: "none" }}
+                            onClick={() => {
+                                this.props.Clicked(3)
+                            }}
+                        >
                             <FontAwesomeIcon
                                 style={styles.panelIcon}
                                 icon={faMailBulk}
                             />
                         </button>
-                        <button style={styles.panelBox}>
+                        <button
+                            lassName={cx(panelBx)}
+                            style={{ outline: "none" }}
+                            onClick={() => {
+                                this.props.Clicked(4)
+                            }}
+                        >
                             <FontAwesomeIcon
                                 style={styles.panelIcon}
                                 icon={faCalendarAlt}
                             />
                         </button>
-                        <button style={styles.panelBox}>
+                        <button
+                            className={cx(panelBx)}
+                            style={{ outline: "none" }}
+                            onClick={() => {
+                                this.props.Clicked(5)
+                            }}
+                        >
                             <FontAwesomeIcon
                                 style={styles.panelIcon}
                                 icon={faCommentDollar}
@@ -78,7 +110,6 @@ class Panel extends Component {
                         onClick={this.toggle}
                         open={openBox}
                     >
-
                         <FontAwesomeIcon
                             style={openBox ? styles.chevronDown : styles.chevronUp}
                             icon={faChevronCircleDown}
@@ -109,6 +140,17 @@ class Panel extends Component {
 }
 
 export default Panel
+
+const panelBx = css`
+        textAlign: center;
+        width: 25%;
+        height: 15vh;
+        border: none;
+        outline: none;
+    
+`
+
+
 
 const styles = {
     panelUp: {
