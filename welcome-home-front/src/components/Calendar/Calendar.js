@@ -49,20 +49,70 @@ class Calendar extends Component {
     render() {
         let weekdays = this.daysShort.map((day) => {
             return (
-                <td key={day}>{day}</td>
+                <td key={day} style={styles.weekDay}>{day}</td>
             )
 
+        });
+
+        let blanks = [];
+        for (let i = 0; i < this.firstDayOfMonth(); i++) {
+            blanks.push(
+                <td style={styles.weekDay}>
+                    {""}
+                </td>
+            );
+        }
+
+        let daysInMonth = []
+
+        for (let d = 1; d <= this.daysInMonth(); d++) {
+            daysInMonth.push(
+                <td key={d} style={this.currentDay() ? styles.currentDay : styles.weekDay}>
+                    <span>{d}</span>
+                </td>
+            )
+        }
+
+        let totalSlots = [...blanks, ...daysInMonth];
+        let rows = [];
+        let cells = [];
+
+        totalSlots.forEach((row, i) => {
+            if ((i % 7) !== 0) {
+                cells.push(row);
+            } else {
+                let insertRow = cells.slice();
+                rows.push(insertRow);
+                cells = [];
+                cells.push(row);
+            }
+            if (i === totalSlots.length - 1) {
+                let insertRow = cells.slice();
+                rows.push(insertRow);
+            }
         })
+
+        let trElems = rows.map((d, i) => {
+            return (
+                <tr key={i * 100}>
+                    {d}
+                </tr>
+            )
+        })
+
         return (
             <div style={styles.container}>
-                <table>
+                <table style={styles.calendar}>
                     <thead>
-                        <tr>
+                        <tr >
 
                         </tr>
                     </thead>
                     <tbody>
-                        {weekdays}
+                        <tr>
+                            {weekdays}
+                        </tr>
+                        {trElems}
                     </tbody>
                 </table>
             </div>
@@ -74,6 +124,8 @@ export default Calendar
 
 const styles = {
     container: {
+        padding: "0",
+        margin: "0",
         textAlign: "center",
         width: "100vw",
         height: "60vh",
@@ -82,5 +134,24 @@ const styles = {
     weekDay: {
         textAlign: "center",
         height: "40px"
+    },
+    calendar: {
+        display: "flex",
+        justifyContent: "center",
+        backgroundColor: "yellow",
+        borderSpacing: "0",
+        width: "100%",
+        height: "60vh"
+
+    },
+    currentDay: {
+        backgroundColor: "lightBlue",
+        width: "13vw",
+        height: "10vh",
+        lineHeight: "50px",
+        border: "1px solid black"
     }
+
+
+
 }
