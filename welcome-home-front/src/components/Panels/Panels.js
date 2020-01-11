@@ -82,7 +82,7 @@ class Panel extends Component {
                             />
                         </button>
                         <button
-                            lassName={cx(panelBx)}
+                            className={cx(panelBx)}
                             style={{ outline: "none" }}
                             onClick={() => {
                                 this.props.Clicked(4)

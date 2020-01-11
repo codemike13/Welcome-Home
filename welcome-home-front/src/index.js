@@ -15,14 +15,42 @@ class App extends Component {
     };
 
 
+    Clicked = val => {
+        switch (val) {
+            case 1:
+                this.currentPane = <h1>Admin / Users</h1>;
+                break;
+            case 2:
+                this.currentPane = <h1>Maintenance </h1>;
+                break;
+            case 3:
+                this.currentPane = <h1>Mailer </h1>;
+                break;
+            case 4:
+                this.currentPane = <Calendar />;
+                break;
+            case 5:
+                this.currentPane = <h1>MarketPlace</h1>;
+                break;
+            default:
+                break;
+        }
+        this.setState({
+            pane: val
+        });
+    };
 
 
     render() {
         return (
             <div style={styles.app}>
                 <Nav />
-                <Panel />
-                <Calendar />
+                <Panel
+                    pane={this.state.pane}
+                    Clicked={this.Clicked}
+                />
+                {this.currentPane}
+                {/* <Calendar /> */}
                 {/* <Card /> */}
                 <Footer />
             </div>
