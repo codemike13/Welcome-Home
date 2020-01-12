@@ -6,6 +6,7 @@ const logger = require('morgan');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const cors = require('cors');
 
 let MongoStore = require('connect-mongo')(session)
 
@@ -35,6 +36,7 @@ app.use(passport.initialize())
 
 require('./passport/passport')(passport)
 
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
