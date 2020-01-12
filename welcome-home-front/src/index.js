@@ -6,6 +6,7 @@ import Panel from './components/Panels/Panels'
 import Manage from "./components/Manage/manage"
 import Card from './components/Card/Card'
 import Calendar from './components/Calendar/Calendar'
+import Cal from './components/Calendar/Calendar2'
 import Footer from './components/footer/Footer'
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
                 this.currentPane = <h1>Maintenance </h1>;
                 break;
             case 3:
-                this.currentPane = <h1>Mailer </h1>;
+                this.currentPane = <Cal />;
                 break;
             case 4:
                 this.currentPane = <Calendar />;
