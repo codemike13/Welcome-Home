@@ -24,6 +24,11 @@ class Manage extends Component {
             deleteUser: false,
             landing: !this.state.landing
         })
+        const checkUpdate = document.querySelector(`#updateResButton`).disabled
+        document.querySelector(`#updateResButton`).disabled = !checkUpdate
+
+        const checkDel = document.querySelector(`#deleteResButton`).disabled
+        document.querySelector(`#deleteResButton`).disabled = !checkDel
     }
 
     showUpdateResident = () => {
@@ -33,6 +38,12 @@ class Manage extends Component {
             deleteUser: false,
             landing: !this.state.landing
         })
+
+        const checkNew = document.querySelector(`#newResButton`).disabled
+        document.querySelector(`#newResButton`).disabled = !checkNew
+
+        const checkDel = document.querySelector(`#deleteResButton`).disabled
+        document.querySelector(`#deleteResButton`).disabled = !checkDel
     }
 
     showDeleteResident = () => {
@@ -42,6 +53,12 @@ class Manage extends Component {
             deleteUser: !this.state.deleteUser,
             landing: !this.state.landing
         })
+
+        const checkNew = document.querySelector(`#newResButton`).disabled
+        document.querySelector(`#newResButton`).disabled = !checkNew
+
+        const checkUpdate = document.querySelector(`#updateResButton`).disabled
+        document.querySelector(`#updateResButton`).disabled = !checkUpdate
     }
 
     render() {
@@ -66,9 +83,9 @@ class Manage extends Component {
                         <h2>Reception Management Menu</h2>
                     </div>
                     <div id="reception-menu" style={styles.reception.menu}>
-                        <button onClick={this.showNewResident} className="btn btn-success" style={styles.reception.menuButtons}>Add New Resident</button>
-                        <button onClick={this.showUpdateResident} className="btn btn-success" style={styles.reception.menuButtons}>Update Resident's Information</button>
-                        <button onClick={this.showDeleteResident} className="btn btn-danger" style={styles.reception.menuButtons}>Delete Resident</button>
+                        <button onClick={this.showNewResident} className="btn btn-success" id="newResButton" style={styles.reception.menuButtons}>Add New Resident</button>
+                        <button onClick={this.showUpdateResident} className="btn btn-success" id="updateResButton" style={styles.reception.menuButtons}>Update Resident's Information</button>
+                        <button onClick={this.showDeleteResident} className="btn btn-danger" id="deleteResButton" style={styles.reception.menuButtons}>Delete Resident</button>
                     </div>
                     
                     {/* Right side of page */}
