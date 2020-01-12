@@ -45,7 +45,7 @@ export const apiHandleSignUpAndLogIn = (userInfo) => {
 
 export const apiHandleCreateResident = (data) => {
     return new Promise((resolve, reject) => {
-        Axios.post('/manager', data, axiosConfig)
+        Axios.post('/reception/createresident', data, axiosConfig)
     })
 }
 

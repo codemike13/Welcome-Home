@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs')
 module.exports = {
     newResident: (params) => {
         return new Promise((resolve, reject) => {
+            console.log(params);
             Resident.findOne({ email: params.email })
                 .then(resident => {
                     if (resident) {

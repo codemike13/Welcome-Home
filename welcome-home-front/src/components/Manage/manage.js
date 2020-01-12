@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import background from '../../images/bg-1.jpg'
+import reception from '../../images/reception.jpg'
 import NewResident from './NewResident'
 import UpdateResident from './UpdateResident'
 import DeleteResident from './DeleteResident'
@@ -9,9 +10,10 @@ class Manage extends Component {
         super(props)
         this.state = {
             user: 'reception',
-            newUser: true,
+            newUser: false,
             updateUser: false,
-            deleteUser: false
+            deleteUser: false,
+            landing: true
         }
     }
 
@@ -19,7 +21,8 @@ class Manage extends Component {
         this.setState({
             newUser: !this.state.newUser,
             updateUser: false,
-            deleteUser: false
+            deleteUser: false,
+            landing: !this.state.landing
         })
     }
 
@@ -27,7 +30,8 @@ class Manage extends Component {
         this.setState({
             newUser: false,
             updateUser: !this.state.updateUser,
-            deleteUser: false
+            deleteUser: false,
+            landing: !this.state.landing
         })
     }
 
@@ -35,7 +39,8 @@ class Manage extends Component {
         this.setState({
             newUser: false,
             updateUser: false,
-            deleteUser: !this.state.deleteUser
+            deleteUser: !this.state.deleteUser,
+            landing: !this.state.landing
         })
     }
 
@@ -84,6 +89,15 @@ class Manage extends Component {
 
                         {this.state.deleteUser ?
                         <DeleteResident />
+                        :
+                        ''
+                        }
+
+                        {this.state.landing ?
+                        <>
+                        <img src={reception} alt="A cartoon of a woman sitting at a reception desk" style={styles.reception.landingIMG} />
+                        <p className="my-3">Please select a menu option</p>
+                        </>
                         :
                         ''
                         }
@@ -142,10 +156,16 @@ const styles = {
         },
         content: {
             display: 'flex',
+            flexDirection: 'column',
             gridArea: '1 / 2 / span 2 / span 1',
             alignItems: 'center',
             justifyContent: 'center',
             overflowY: 'scroll'
+        },
+        landingIMG: {
+            height: '60%',
+            width: '45%',
+            borderRadius: '5px'
         }
     },
 
