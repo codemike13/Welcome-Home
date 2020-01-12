@@ -42,6 +42,14 @@ export const apiHandleSignUpAndLogIn = (userInfo) => {
             .catch(error => reject(error.response.data.message))
     })
 }
+
+export const apiHandleCreateResident = (data) => {
+    return new Promise((resolve, reject) => {
+        Axios.post('/manager', data, axiosConfig)
+    })
+}
+
+
 const axiosConfig = {
     headers: {
         'Content-Type': 'application/json;charset=UTF-8',
