@@ -51,6 +51,9 @@ class Panel extends Component {
                             style={{ outline: "none" }}
                             onClick={() => {
                                 this.props.Clicked(1)
+                                this.setState({
+                                    openBox: false
+                                })
                             }}
                         >
                             <FontAwesomeIcon
@@ -63,6 +66,9 @@ class Panel extends Component {
                             style={{ outline: "none" }}
                             onClick={() => {
                                 this.props.Clicked(2)
+                                this.setState({
+                                    openBox: false
+                                })
                             }}
                         >
                             <FontAwesomeIcon
@@ -74,6 +80,9 @@ class Panel extends Component {
                             style={{ outline: "none" }}
                             onClick={() => {
                                 this.props.Clicked(3)
+                                this.setState({
+                                    openBox: false
+                                })
                             }}
                         >
                             <FontAwesomeIcon
@@ -86,6 +95,9 @@ class Panel extends Component {
                             style={{ outline: "none" }}
                             onClick={() => {
                                 this.props.Clicked(4)
+                                this.setState({
+                                    openBox: false
+                                })
                             }}
                         >
                             <FontAwesomeIcon
@@ -98,6 +110,9 @@ class Panel extends Component {
                             style={{ outline: "none" }}
                             onClick={() => {
                                 this.props.Clicked(5)
+                                this.setState({
+                                    openBox: false
+                                })
                             }}
                         >
                             <FontAwesomeIcon
