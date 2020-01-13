@@ -24,21 +24,39 @@ module.exports = {
                         newResident.cellNumber = params.cellNumber
                         newResident.workNumber = params.workNumber
                         newResident.faxNumber = params.faxNumber
-                        newResident.textMessageAuth = params.textMessageAuth
-                        newResident.emergencyContact = params.emergencyContact
-                        newResident.notifyMaintenance = params.notifyMaintenance
-                        newResident.notifyEvent = params.notifyEvent
-                        newResident.altMailing.name = params.altMailingName
-                        newResident.altMailing.addressOne = params.altMailingAddressOne
-                        newResident.altMailing.addressTwo = params.altMailingAddressTwo
-                        newResident.altMailing.city = params.altMailingCity
-                        newResident.altMailing.state = params.altMailingState
-                        newResident.altMailing.zip = params.altMailingZip
-                        newResident.insurance.type = params.insuranceType
-                        newResident.insurance.company = params.insuranceCompany
-                        newResident.insurance .policyNumber = params.insurancePolicyNumber
-                        newResident.insurance.liabilityCoverage = params.insuranceLiabilityCoverage
-                        newResident.insurance.propertyCoverage = params.insurancePropertyCoverage
+
+                        if (params.textMessageAuth === 'true') {
+                            newResident.textMessageAuth = true
+                        } else {
+                            newResident.textMessageAuth = false
+                        }
+
+                        newResident.emergencyContact.name = params.emergencyContact.emgName
+                        newResident.emergencyContact.address = params.emergencyContact.emgAddress
+                        newResident.emergencyContact.number = params.emergencyContact.emgNumber
+
+                        if (params.notifyMaintenance === 'true') {
+                            newResident.notifyMaintenance = true
+                        } else {
+                            newResident.notifyMaintenance = false
+                        }
+
+                        if (params.notifyEvent === 'true') {
+                            newResident.notifyEvent = true
+                        } else {
+                            newResident.notifyEvent = false
+                        }
+
+                        newResident.altMailing.name = params.altMailing.name
+                        newResident.altMailing.address = params.altMailing.address
+                        newResident.altMailing.city = params.altMailing.city
+                        newResident.altMailing.state = params.altMailing.state
+                        newResident.altMailing.zip = params.altMailing.zip
+                        newResident.insurance.type = params.insurance.type
+                        newResident.insurance.company = params.insurance.company
+                        newResident.insurance .policyNumber = params.insurance.policy
+                        newResident.insurance.liabilityCoverage = params.insurance.liability
+                        newResident.insurance.propertyCoverage = params.insurance.property
                         bcrypt.genSalt(10, function(err, salt) {
                             if (err) {
                                 let error = {
