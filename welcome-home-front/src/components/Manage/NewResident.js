@@ -84,7 +84,6 @@ class NewResident extends Component {
     }
 
     appCreateResident = () => {
-        console.log(`starting function`)
         const data = {
             firstName: document.querySelector(`#firstName`).value,
             middleName: document.querySelector(`#middleName`).value,
@@ -118,7 +117,6 @@ class NewResident extends Component {
                 property: document.querySelector(`#insProp`).value
             }
         }
-        console.log(`DATA CREATED`);
         apiHandleCreateResident(data)
     }
 
