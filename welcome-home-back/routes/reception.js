@@ -10,10 +10,13 @@ router.get('/', function (req, res, next) {
 
 
 router.post('/createresident', (req, res) => {
-    console.log(`GOT TO BACK END`);
     residentController.newResident(req.body)
-        .then()
-        .catch()
+        .then(newResident => {
+            res.json(newResident)
+        })
+        .catch(err => {
+            res.json(err)
+        })
 })
 
-module.exports = router;
+module.exports = router
