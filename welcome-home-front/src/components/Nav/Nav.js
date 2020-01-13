@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { apiAuth, apiHandleSignUpAndLogIn } from '../../api/api'
+import { apiAuth, apiHandleLogIn } from '../../api/api'
 import setAuthJWT from '../../api/setAuthJWT'
 import skyviewLogo from '../../images/skyview-logo.png'
 
@@ -39,7 +39,7 @@ class Nav extends Component {
     handleInputOnSubmit = (event) => {
         event.preventDefault()
 
-        apiHandleSignUpAndLogIn({
+        apiHandleLogIn({
             email: this.state.email,
             password: this.state.password
         })

@@ -68,6 +68,12 @@ class NewResident extends Component {
     { value: "WY", label: "Wyoming" }
     ]
 
+    // Not needed for now, future implementation
+    // optionsIns = [
+    //     { value: "Renter's", label: "Renter's" },
+    //     { value: "Home Owner's", label: "Home Owner's" }
+    // ]
+
     handleChange(data) {
         this.setState({
             stateSelect: {

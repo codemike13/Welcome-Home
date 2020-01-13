@@ -4,7 +4,6 @@ const bcrypt = require('bcryptjs')
 module.exports = {
     newResident: (params) => {
         return new Promise((resolve, reject) => {
-            console.log(params);
             Resident.findOne({ email: params.email })
                 .then(resident => {
                     if (resident) {
@@ -57,38 +56,13 @@ module.exports = {
                         newResident.insurance .policyNumber = params.insurance.policy
                         newResident.insurance.liabilityCoverage = params.insurance.liability
                         newResident.insurance.propertyCoverage = params.insurance.property
-                        bcrypt.genSalt(10, function(err, salt) {
-                            if (err) {
-                                let error = {
-                                    status: 500,
-                                    message: 'Error generating salt for password encryption'
-                                }
-                                reject(error)
-                                
-                            } else {
-                                bcrypt.hash(params.password, salt, function(err, hash) {
-                                    if (err) {
-                                        let error = {
-                                            status: 500,
-                                            message: 'Enable to hash password: Internal sever error'
-                                        }
-                                        reject(error)
-                                    }
-                                    newResident.password = hash
-                                    newResident.save()
-                                        .then(createdResident => {
-                                            resolve(createdResident)
-                                        })
-                                        .catch(err => {
-                                            let error = {
-                                                status: 500,
-                                                message: 'Unable to save password: Internal sever error'
-                                            }
-                                            reject(error)
-                                        })
-                                })
-                            }
-                        })
+                        newResident.resident = true
+                        newResident.password = 'WelcomeHome'
+                        newResident.save()
+                            .then(createdResident => {
+                                resolve(createdResident)
+                            })
+                            .catch(err => reject(err))
                     }
                 })
                 .catch(err => reject(err))

@@ -7,16 +7,16 @@ const ResidentSchema = new Schema({
     lastName: { type: String, default: String },
     password: { type: String, default: 'WelcomeHome' },
     email: { type: String, default: '', unique: true },
-    unit: { type: Number, default: Number },
-    homeNumber: { type: Number, default: '' },
-    cellNumber: { type: Number, default: '' },
-    workNumber: { type: Number, default: '' },
-    faxNumber: { type: Number, default: '' },
+    unit: { type: String, default: '' },
+    homeNumber: { type: String, default: '' },
+    cellNumber: { type: String, default: '' },
+    workNumber: { type: String, default: '' },
+    faxNumber: { type: String, default: '' },
     textMessageAuth: { type: Boolean, default: false },
     emergencyContact: {
         name: {type: String, default: ''},
         address: {type: String, default: ''},
-        number: {type: Number, default: ''}
+        number: {type: String, default: ''}
     },
     notifyMaintenance: { type: Boolean, default: true },
     notifyEvent: { type: Boolean, default: true },
@@ -25,14 +25,14 @@ const ResidentSchema = new Schema({
         address: { type: String, default: '' },
         city: { type: String, default: '' },
         state: { type: String, default: '' },
-        zip: { type: Number, default: '' }
+        zip: { type: String, default: '' }
     },
     insurance: {
         type: { type: String, default: '' },
         company: { type: String, default: '' },
         policyNumber: { type: String, default: '' },
-        liabilityCoverage: { type: Number, default: '' },
-        propertyCoverage: { type: Number, default: '' }
+        liabilityCoverage: { type: String, default: '' },
+        propertyCoverage: { type: String, default: '' }
     },
     resident: { type: Boolean, default: true }
 })

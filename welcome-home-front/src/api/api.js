@@ -25,9 +25,9 @@ export const apiAuth = () => {
     })
 }
 
-export const apiHandleSignUpAndLogIn = (userInfo) => {
+export const apiHandleLogIn = (userInfo) => {
     return new Promise((resolve, reject) => {
-        Axios.post('/users/signupandlogin', userInfo, axiosConfig)
+        Axios.post('/users/login', userInfo, axiosConfig)
             .then(result => {
                 const { token } = result.data
 
